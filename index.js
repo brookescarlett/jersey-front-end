@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function(e) {
 
 
     (function addModal() {
-        console.log('here')
         let screen = document.createElement('div')
         screen.className = "password-modal fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center"
         screen.style.backgroundColor = "black"
@@ -26,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function(e) {
     databaseRef.on('child_added', function (snapshot) {
         let data = snapshot.val()
         for (let i in data) {
-            console.log(data[i])
             if (data[i] !== "") {
                 let parsedData = beautifyAddress(data[i])
                 addAddressToTable(parsedData)
@@ -38,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function(e) {
         e.preventDefault()
       
         if (e.target.type === "submit") {
-            console.log('here')
             let enteredPass = document.querySelector('.password-field').value
             
             if (enteredPass === "jerseyground") {
